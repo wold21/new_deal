@@ -71,22 +71,21 @@
 --         ,date_format(ta.adv_date, '%Y.%m.%d') 상담일자
 --         ,ta.tut_id
 --         ,ui.name
-select ta.adv_id, li.lec_name, ui.name, ta.std_id, ta.adv_date, ui.name, ui.loginID
-	from tb_userinfo ui
-		left join (
-						select lec_id, lec_name, tutor_name
-						from tb_lec_info
-					)li on ui.loginID = li.lec_id
-		left join (
-						select adv_id, std_id, adv_date, tut_id
-							from tb_adv
-					)ta on ui.loginID = ta.std_id
-	where li.lec_name = '애플의 탄생'
 
-                    
+-- select li.lec_name
+-- 	from tb_userinfo ui
+-- 		left join (
+-- 						select lec_id, lec_name, tutor_name, tutor_id
+-- 						from tb_lec_info
+-- 					)li on ui.loginID = li.tutor_id
+-- 		left join (
+-- 						select adv_id, std_id, adv_date, tut_id
+-- 							from tb_adv
+-- 					)ta on ui.loginID = ta.std_id;
+
+--                     
 -- select *
--- 	from tb_userinfo
-                    
+-- 	from tb_lec_info
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
